@@ -1,5 +1,6 @@
 package br.com.eduardo.clientes.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,6 +24,7 @@ public class Cliente {
     private String cpf;
 
     @Column(name = "data_cadastro")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
 

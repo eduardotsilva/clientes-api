@@ -51,8 +51,8 @@ public class ClienteController {
 
         repository.findById(id)
                 .map( cliente ->{
-
                     clienteUpd.setId(cliente.getId());
+
                     return repository.save(clienteUpd);
                 })
                 .orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND));

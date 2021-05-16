@@ -14,8 +14,8 @@ public class InternacionalizacaoConfig {
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("messages");
-        messageSource.setDefaultEncoding("ISO-8859-1");
+        messageSource.setBasename("classpath:messages");
+        messageSource.setDefaultEncoding("UTF-8");
         messageSource.setDefaultLocale(Locale.getDefault());
 
         return messageSource;

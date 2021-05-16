@@ -24,38 +24,40 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente salvar(@RequestBody @Valid Cliente cliente){
+    public Cliente salvar(@RequestBody @Valid Cliente cliente) {
         return repository.save(cliente);
     }
 
     @GetMapping("/{id}")
-    public Cliente acharPorId(@PathVariable  Integer id){
+    public Cliente acharPorId(@PathVariable Integer id) {
 
-        return repository.findById(id).orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Cliente não encontrado"));
 
     }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletar(@PathVariable Integer id){
+    public void deletar(@PathVariable Integer id) {
 
         repository.findById(id)
-                .map( cliente ->{
+                .map(cliente -> {
                     repository.deleteById(id);
                     return Void.TYPE;
                 })
-                .orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Cliente não encontrado"));
     }
+
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void atualizar(@PathVariable Integer id, @RequestBody Cliente clienteUpd ){
+    public void atualizar(@PathVariable Integer id, @RequestBody @Valid Cliente clienteUpd) {
 
         repository.findById(id)
-                .map( cliente ->{
+                .map(cliente -> {
                     clienteUpd.setId(cliente.getId());
 
                     return repository.save(clienteUpd);
                 })
-                .orElseThrow( ()-> new ResponseStatusException(HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Cliente não encontrado"));
 
     }
 

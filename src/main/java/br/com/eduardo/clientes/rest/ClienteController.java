@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
@@ -61,5 +62,10 @@ public class ClienteController {
 
     }
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Cliente> obterTodos(){
+        return repository.findAll();
+    }
 
 }

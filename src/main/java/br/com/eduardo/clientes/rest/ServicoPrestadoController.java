@@ -5,12 +5,10 @@ import br.com.eduardo.clientes.model.entity.ServicoPrestado;
 import br.com.eduardo.clientes.model.repository.ClienteRepository;
 import br.com.eduardo.clientes.model.repository.ServicoPrestadoRepository;
 import br.com.eduardo.clientes.rest.dto.ServicoPrestadoDTO;
+import br.com.eduardo.clientes.util.BigDecimalConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
@@ -24,8 +22,10 @@ public class ServicoPrestadoController {
 
     private final ClienteRepository clienteRepository;
     private final ServicoPrestadoRepository repository;
+    private final BigDecimalConverter bigDecimalConverter;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ServicoPrestado salvar(@RequestBody ServicoPrestadoDTO dto) {
 
         LocalDate data = LocalDate.parse(dto.getData(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
@@ -41,9 +41,9 @@ public class ServicoPrestadoController {
         servicoPrestado.setDescricao(dto.getDescricao());
         servicoPrestado.setData(data);
         servicoPrestado.setCliente(cliente);
-//        servicoPrestado.setValor();
+        servicoPrestado.setValor(bigDecimalConverter.converter(dto.getPreço()));
 
-        return null;
+        return repository.save(servicoPrestado);
     }
 
 }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class ServicoPrestadoDTO {
 
     private String Descricao;
-    private String preço;
+    private String preco;
     private String data;
     private Integer idCliente;
 

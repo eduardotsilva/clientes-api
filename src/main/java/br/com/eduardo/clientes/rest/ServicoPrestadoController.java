@@ -14,12 +14,10 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/servicos-prestados")
 @RequiredArgsConstructor
-@CrossOrigin("*")
 public class ServicoPrestadoController {
 
     private final ClienteRepository clienteRepository;
@@ -43,7 +41,7 @@ public class ServicoPrestadoController {
         servicoPrestado.setDescricao(dto.getDescricao());
         servicoPrestado.setData(data);
         servicoPrestado.setCliente(cliente);
-        servicoPrestado.setValor(bigDecimalConverter.converter(dto.getPreço()));
+        servicoPrestado.setValor(bigDecimalConverter.converter(dto.getPreco()));
 
         return repository.save(servicoPrestado);
     }

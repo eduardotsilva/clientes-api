@@ -17,6 +17,7 @@ Esse projeto foi desenvolvido durante o curso: [Angular 9 + Spring Boot 2.x: Ful
 2. Utilizar o OAuth2 e Token JWT com Spring Security
 3. Boas práticas de programação e Clean Code:heavy_check_mark:
 4. Trabalhar com Angular Material, Fazer Upload de Arquivos e Paginação por Demanda 
+5. Swagger 
 
 ## Execução
 1. Projeto pode ser clonado e execuado diretamente na IDE, pois está sendo utilizado banco em memória

@@ -9,7 +9,7 @@
 ```
 
 # clientes-api
-Esse projeto foi desenvolvido durante o curso: [Angular 9 + Spring Boot 2.x: Fullstack
+Esse projeto está sendo desenvolvido durante o curso: [Angular 9 + Spring Boot 2.x: Fullstack
 ](https://www.udemy.com/course/full-stack-angular9-spring-boot/) 
 
 ## Desafio

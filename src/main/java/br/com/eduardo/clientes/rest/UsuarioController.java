@@ -1,10 +1,11 @@
 package br.com.eduardo.clientes.rest;
 
-import br.com.eduardo.clientes.model.entity.Usuario;
+
 import br.com.eduardo.clientes.model.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import br.com.eduardo.clientes.model.entity.Usuario;
 
 import javax.validation.Valid;
 

@@ -14,10 +14,11 @@ Esse projeto está sendo desenvolvido durante o curso: [Angular 9 + Spring Boot 
 
 ## Desafio
 1. Desenvolver RestFUL API com Spring Boot e Consumir com aplicação Angular:heavy_check_mark:
-2. Utilizar o OAuth2 e Token JWT com Spring Security
+2. Utilizar o OAuth2 e Token JWT com Spring Security:heavy_check_mark:
 3. Boas práticas de programação e Clean Code:heavy_check_mark:
-4. Trabalhar com Angular Material, Fazer Upload de Arquivos e Paginação por Demanda 
-5. Swagger 
+4. Trabalhar com Angular Material, Fazer Upload de Arquivos e Paginação por Demanda:heavy_check_mark:
+
+Complementei com swagger e publicação no Heroku 
 
 ## Execução
 1. Projeto pode ser clonado e execuado diretamente na IDE, pois está sendo utilizado banco em memória

@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=${PROFILE_ACTIVE}  -jar  *.jar
+web: java -jar target/*.jar

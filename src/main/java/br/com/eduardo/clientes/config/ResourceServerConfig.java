@@ -15,10 +15,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("**").permitAll();
-//                .antMatchers("/api/usuarios","/h2-console/**", "/swagger-ui.html","/webjars/**","/swagger-ui.html/**", "/swagger-resources/**","/v2/api-docs").permitAll()
-//                .antMatchers("/api/clientes/**","/api/servicos-prestados/**").authenticated()
-//                .anyRequest().denyAll();
+                .antMatchers("/api/usuarios","/h2-console/**", "/swagger-ui.html","/webjars/**","/swagger-ui.html/**", "/swagger-resources/**","/v2/api-docs").permitAll()
+                .antMatchers("/api/clientes/**","/api/servicos-prestados/**").authenticated()
+                .anyRequest().denyAll();
         ;
     }
 }

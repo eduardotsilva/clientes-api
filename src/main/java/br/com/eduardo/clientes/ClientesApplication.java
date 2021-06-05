@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Profile;
 @SpringBootApplication
 public class ClientesApplication {
     @Bean
-    @Profile("prod")
+    @Profile("dev")
     public CommandLineRunner runner(@Autowired ClienteRepository repository) {
         return args -> {
             Cliente cliente = Cliente.builder()

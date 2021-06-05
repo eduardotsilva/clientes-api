@@ -7,11 +7,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
 public class ClientesApplication {
 
     @Bean
+    @Profile("test")
     public CommandLineRunner runner(@Autowired ClienteRepository repository) {
         return args -> {
             Cliente cliente = Cliente.builder()

@@ -3,6 +3,7 @@ package br.com.eduardo.clientes;
 import br.com.eduardo.clientes.model.entity.Cliente;
 import br.com.eduardo.clientes.model.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,9 +12,8 @@ import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
 public class ClientesApplication {
-
     @Bean
-    @Profile("test")
+    @Profile("prod")
     public CommandLineRunner runner(@Autowired ClienteRepository repository) {
         return args -> {
             Cliente cliente = Cliente.builder()
@@ -22,6 +22,7 @@ public class ClientesApplication {
                     .build();
 
             repository.save(cliente);
+
         };
     }
 

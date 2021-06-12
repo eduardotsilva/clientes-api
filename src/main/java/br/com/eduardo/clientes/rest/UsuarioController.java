@@ -1,20 +1,18 @@
 package br.com.eduardo.clientes.rest;
 
 
-import br.com.eduardo.clientes.exception.UsuarioCadastradoException;
-import br.com.eduardo.clientes.model.repository.UsuarioRepository;
+import br.com.eduardo.clientes.model.entity.Usuario;
 import br.com.eduardo.clientes.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import br.com.eduardo.clientes.model.entity.Usuario;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/usuarios")
+@RequestMapping("usuarios")
 @RequiredArgsConstructor
 public class UsuarioController {
 
@@ -30,4 +28,11 @@ public class UsuarioController {
         }
 
     }
+
+    @GetMapping
+    private List<Usuario> listall(){
+        return usuarioService.listarUsuarios();
+    }
+
+
 }

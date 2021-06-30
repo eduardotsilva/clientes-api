@@ -3,6 +3,8 @@ package br.com.eduardo.clientes.service;
 import br.com.eduardo.clientes.exception.UsuarioCadastradoException;
 import br.com.eduardo.clientes.model.entity.Usuario;
 import br.com.eduardo.clientes.model.repository.UsuarioRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

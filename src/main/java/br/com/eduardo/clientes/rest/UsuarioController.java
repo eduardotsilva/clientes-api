@@ -2,11 +2,11 @@ package br.com.eduardo.clientes.rest;
 
 
 import br.com.eduardo.clientes.model.entity.Usuario;
-import br.com.eduardo.clientes.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import br.com.eduardo.clientes.service.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("usuarios")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class UsuarioController {
 
     private final UsuarioService usuarioService;

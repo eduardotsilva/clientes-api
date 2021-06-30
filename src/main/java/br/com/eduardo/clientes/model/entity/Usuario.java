@@ -2,6 +2,7 @@ package br.com.eduardo.clientes.model.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
